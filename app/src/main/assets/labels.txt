@@ -1,0 +1,10 @@
+10 new
+10 old
+100 new
+100 old
+20
+200
+2000 new
+50 new
+50 old
+500 new
