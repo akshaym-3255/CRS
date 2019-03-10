@@ -20,7 +20,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.widget.Button;
 import android.widget.Toast;
+import android.content.Intent;
+import android.view.View;
 
 import java.util.Locale;
 
@@ -65,5 +68,11 @@ public class CameraActivity extends Activity {
       myTTS.speak(s,TextToSpeech.QUEUE_FLUSH,null);
     }
   }
+
+
+  public void convert(View v){
+      startActivity(new Intent(CameraActivity.this, ExchangeRate.class));
+    }
+
 }
 

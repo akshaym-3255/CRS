@@ -196,6 +196,10 @@
         "source": "/home/akshay/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/3c8421c32295f2eca7ae0a18595e304d/res/layout-v21/notification_template_icon_group.xml"
     },
     {
+        "merged": "/home/akshay/Documents/tensorflow-for-poets-2/android/tflite/app/build/intermediates/res/merged/debug/layout_activity_exchange_rate.xml.flat",
+        "source": "/home/akshay/Documents/tensorflow-for-poets-2/android/tflite/app/src/main/res/layout/activity_exchange_rate.xml"
+    },
+    {
         "merged": "/home/akshay/Documents/tensorflow-for-poets-2/android/tflite/app/build/intermediates/res/merged/debug/drawable_design_fab_background.xml.flat",
         "source": "/home/akshay/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/3f487c1d2c2bfa0b6f47c920e8eccc3a/res/drawable/design_fab_background.xml"
     },

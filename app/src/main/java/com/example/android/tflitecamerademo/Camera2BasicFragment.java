@@ -665,6 +665,7 @@ public class Camera2BasicFragment extends Fragment
     bitmap.recycle();
 
     showToast(textToShow);
+   //  System.out.println()
     //speak2(textToShow);
   }
 
