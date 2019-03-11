@@ -16,6 +16,7 @@ limitations under the License.
 package com.example.android.tflitecamerademo;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.SpeechRecognizer;
@@ -24,6 +25,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.content.Intent;
 import android.view.View;
+
 
 import java.util.Locale;
 
@@ -64,15 +66,27 @@ public class CameraActivity extends Activity {
   public static void speak(String s) {
     if(Build.VERSION.SDK_INT >= 21){
       myTTS.speak(s,TextToSpeech.QUEUE_FLUSH,null,null);
+
+    }else{
+      myTTS.speak(s,TextToSpeech.QUEUE_FLUSH,null);
+    }
+  }
+
+  public  void speak2(String s) {
+    if(Build.VERSION.SDK_INT >= 21){
+      myTTS.speak(s,TextToSpeech.QUEUE_FLUSH,null,null);
+
     }else{
       myTTS.speak(s,TextToSpeech.QUEUE_FLUSH,null);
     }
   }
 
 
-  public void convert(View v){
+  public void  convert(View v){
       startActivity(new Intent(CameraActivity.this, ExchangeRate.class));
     }
+
+
 
 }
 

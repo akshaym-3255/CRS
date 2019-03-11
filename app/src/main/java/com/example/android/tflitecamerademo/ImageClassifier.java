@@ -126,7 +126,7 @@ public class ImageClassifier {
 
     // print the results
     String textToShow = printTopKLabels();
-    textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
+    //textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
     return textToShow;
   }
 
@@ -218,7 +218,9 @@ public class ImageClassifier {
     final int size = sortedLabels.size();
     for (int i = 0; i < size; ++i) {
       Map.Entry<String, Float> label = sortedLabels.poll();
-      textToShow = String.format("\n%s: %4.2f",label.getKey(),label.getValue()) + textToShow;
+      if(label.getValue()>=0.80){
+      textToShow = String.format("%s",label.getKey()) + textToShow;
+    }
     }
     return textToShow;
   }

@@ -22,6 +22,7 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -64,6 +65,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import android.app.ActivityManager;
 
 /** Basic fragments for the Camera. */
 public class Camera2BasicFragment extends Fragment
@@ -83,6 +85,7 @@ public class Camera2BasicFragment extends Fragment
   private boolean checkedPermissions = false;
   private TextView textView;
   private ImageClassifier classifier;
+  Activity context;
 
   /** Max preview width that is guaranteed by Camera2 API */
   private static final int MAX_PREVIEW_WIDTH = 1920;
@@ -665,20 +668,20 @@ public class Camera2BasicFragment extends Fragment
     bitmap.recycle();
 
     showToast(textToShow);
-   //  System.out.println()
+    if(textToShow !="") {
+      CameraActivity ob =new CameraActivity();
+
+      Intent result= new Intent(getActivity(), ExchangeRate.class);
+      result.putExtra("result",textToShow);
+      getActivity().finish();
+      startActivity(result);
+
+    }
+    //System.out.println(textToShow);
     //speak2(textToShow);
   }
 
-  private void speak2(String s){
-    for(int i=0;i<100000000;i++){
-      CameraActivity.speak(s);
-      try {
-        TimeUnit.SECONDS.sleep(15);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    }
-  }
+
 
   /** Compares two {@code Size}s based on their areas. */
   private static class CompareSizesByArea implements Comparator<Size> {
